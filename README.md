@@ -48,6 +48,7 @@ Nota: inserendo “-g” in ogni istruzione abbiamo acconsentito l’installazio
 
 
 Nota 2: con il comando “npm install -g solc@0.5.0” andiamo ad installare il compilatore Solidity. Anche se la documentazione di Node.js consiglia di installare l’ultima release, noi abbiamo scelto di installare la versione 0.5.0 che è la più richiesta dalla community online.
+
 Il compilatore ci è servito, appunto, per compilare lo smart contract e generare l’abi e il bytecode. Per farlo abbiamo aperto il terminale, ci siamo spostati nella cartella dov’è presente il nostro smart contract (denominato “MySmartContract.sol”) ed eseguito il comando “solcjs --bin --abi MySmartContract.sol”.
 
 
