@@ -155,7 +155,7 @@ La schermata che ci si presenterà davanti sarà la seguente:
     c)	Ora, dato che abbiamo il TransactionHash ma abbiamo bisogno dell’indirizzo del contratto, dobbiamo entrare nel nodo 1 e lanciare il comando “eth.getTransactionReceipt”. Per far questo digitiamo il seguente comando:                
     docker-compose exec node1 /bin/sh -c "geth attach qdata/dd/geth.ipc"            
     Una volta entrati nel nodo 1, lanciamo il comando “eth.getTransactionReceipt” dandogli in input il TransactionHash nel seguente modo:             
-    eth.getTransactionReceipt("<TransactionHash>")          
+    eth.getTransactionReceipt(" &lt; TransactionHash &gt; ")          
     Nell’output che ci ritorna quest’ultimo comando troveremo l’indirizzo del contratto che ci andremo a copiare per poi passare allo step 3 della guida.
 
     Nota: com’è possibile vedere, per la risoluzione del problema di caricamento del contratto abbiamo preso come esempio il nodo 1. Possiamo facilmente farlo con gli altri nodi lanciando i comandi in maniera speculare andando a sostituire il numero di un altro nodo dove vediamo “1”.
