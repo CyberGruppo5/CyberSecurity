@@ -58,9 +58,9 @@ In questa guida presenteremo 2 metodi per configurare Quorum sulla nostra macchi
 Il vantaggio di questa versione è che comprende tantissime funzionalità!
 Lo svantaggio, ovviamente, lo riscontriamo computazionalmente. Infatti, per mandare in esecuzione i 7 nodi (previsti da questa versione di Quorum) con Docker in maniera fluida ed utilizzabile, serve una potenza di calcolo che non tutti i PC privati hanno.
 Requisiti minimi consigliati: 
-o	almeno un processore Intel® i7;
-o	almeno 8 GB di RAM;
-o	SSD.
+- almeno un processore Intel® i7;
+- almeno 8 GB di RAM;
+- SSD.
 
 Per verificare che tutto è andato a buon fine eseguire i seguenti passaggi: aprire il terminale, spostarsi nella cartella che ospita i 7 nodi appena installati, eseguire l’istruzione “docker ps -a” per vedere tutti i container che ci sono (sia quelli attivi e sia quelli stoppati). Se tutto è andato nel verso giusto dovrebbero apparire 7 container per i nodi, 7 transaction manager ed 1 container chiamato “cakeshop” (che è un’interfaccia alla blockchain che ci dà la possibilità di visualizzare lo stato della blockchain e di vedere lo stato del proprio nodo, di vedere le transazioni, ecc…).
 
