@@ -122,6 +122,7 @@ Seguire le istruzioni che si trovano nella pagina oppure procedere con i seguent
 
 ## Esecuzione del sistema
 Come operazione preliminare, recarsi nella cartella di riferimento che ospita tutto il sistema appena installato e mandare in esecuzione il seguente comando:
+
 git clone https://github.com/CyberGruppo5/CyberSecurity.git
 
 Fatto questo, seguiamo passo passo i prossimi step:
