@@ -141,10 +141,13 @@ La schermata che ci si presenterà davanti sarà la seguente:
     Come vediamo, il contratto è stato caricato e ci è stato restituito il TransactionHash e l’address del contratto. Per concludere quest’operazione, ci copiamo l’indirizzo del contratto che ci servirà per andare ad effettuare le operazioni di scrittura e/o lettura sulla blockchain.
 
     ATTENZIONE: se il comando “loadScript” ritorna “false” vuol dire che qualcosa non è andato a buon fine. Questo problema può essere aggirato eseguendo il deploy del contratto con le seguenti operazioni:              
+        
         a)	Aprire il terminale, recarsi nella cartella di riferimento (che in quest’esempio si trova nel percorso “C:\Users\Luca\network\3-nodes-istanbul-tessera-bash”) e lanciare il seguente comando:
         docker cp .\CyberSecurity\SmartContract.js node1:/SmartContract.js                      
+        
         b)	Fatto ciò, lanciare il seguente comando: docker-compose exec node1 /bin/sh -c "geth --exec 'loadScript(\"SmartContract.js\")' attach qdata/dd/geth.ipc"          
         A questo punto il contratto è stato caricato e in output ci ritorna il TransactionHash (che sarebbe una stringa esadecimale che rappresenta l’hash della transazione) che ci copieremo perché ci servirà a breve.                
+        
         c)	Ora, dato che abbiamo il TransactionHash ma abbiamo bisogno dell’indirizzo del contratto, dobbiamo entrare nel nodo 1 e lanciare il comando “eth.getTransactionReceipt”. Per far questo digitiamo il seguente comando:                
         docker-compose exec node1 /bin/sh -c "geth attach qdata/dd/geth.ipc"            
         Una volta entrati nel nodo 1, lanciamo il comando “eth.getTransactionReceipt” dandogli in input il TransactionHash nel seguente modo:             
