@@ -34,6 +34,81 @@ Consiglio: nel momento in cui apparirà la seguente schermata, consigliamo di sp
 Una volta completata l'installazione, possiamo verificare se Node.js è stato correttamente installato aprendo una nuova finestra del terminale e lanciando il comando “node -v”. Il risultato che si otterrà, se tutto è andato a buon fine, sarà il seguente:
 ![](github%20pictures%20for%20README/0b.png)
 
+
+Per installare i pacchetti che saranno necessari per la configurazione del nostro sistema, apriamo il terminale e lanciamo i seguenti comandi:
+-	npm install -g web3
+-	npm install -g readline
+-	npm install -g readline-sync
+-	npm install -g crypto
+-	npm install -g image-hash
+-	npm install -g solc@0.5.0 
+
+
+Nota: inserendo “-g” in ogni istruzione abbiamo acconsentito l’installazione dei pacchetti a livello globale. Nel momento in cui vogliamo installarli localmente (quindi all’interno della nostra cartella che ospiterà l’installazione di Quorum) dobbiamo spostarci dentro la cartella e, prima di lanciare l’installazione di tutti i pacchetti senza “-g”, dobbiamo eseguire il comando “npm init”.
+
+
+Nota 2: con il comando “npm install -g solc@0.5.0” andiamo ad installare il compilatore Solidity. Anche se la documentazione di Node.js consiglia di installare l’ultima release, noi abbiamo scelto di installare la versione 0.5.0 che è la più richiesta dalla community online.
+Il compilatore ci è servito, appunto, per compilare lo smart contract e generare l’abi e il bytecode. Per farlo abbiamo aperto il terminale, ci siamo spostati nella cartella dov’è presente il nostro smart contract (denominato “MySmartContract.sol”) ed eseguito il comando “solcjs --bin --abi MySmartContract.sol”.
+
+
 ### Installazione Qurum
+In questa fase mostreremo quali sono gli step necessari per configurare Quorum sulla nostra macchina.
+In questa guida presenteremo 2 metodi per configurare Quorum sulla nostra macchina:
+1)	Il primo metodo, che è quello che consigliamo se si dispone di un PC abbastanza potente, è quello di configurare la release ufficiale di Quorum direttamente dal github di ConsenSys (cioè quello che originariamente apparteneva a JPMorgan Chase). Per far questo, ci si dovrà recare nella sezione github relativa alla blockchain Quorum sviluppata da JPMorgan Chase (https://github.com/ConsenSys/quorum-examples) e si dovranno le istruzioni per la configurazione di Qurum con Docker (che sul README.md della pagina vengono riportate sotto la voce di “Running with Docker”).
+Il vantaggio di questa versione è che comprende tantissime funzionalità!
+Lo svantaggio, ovviamente, lo riscontriamo computazionalmente. Infatti, per mandare in esecuzione i 7 nodi (previsti da questa versione di Quorum) con Docker in maniera fluida ed utilizzabile, serve una potenza di calcolo che non tutti i PC privati hanno.
+Requisiti minimi consigliati: 
+o	almeno un processore Intel® i7;
+o	almeno 8 GB di RAM;
+o	SSD.
+
+Per verificare che tutto è andato a buon fine eseguire i seguenti passaggi: aprire il terminale, spostarsi nella cartella che ospita i 7 nodi appena installati, eseguire l’istruzione “docker ps -a” per vedere tutti i container che ci sono (sia quelli attivi e sia quelli stoppati). Se tutto è andato nel verso giusto dovrebbero apparire 7 container per i nodi, 7 transaction manager ed 1 container chiamato “cakeshop” (che è un’interfaccia alla blockchain che ci dà la possibilità di visualizzare lo stato della blockchain e di vedere lo stato del proprio nodo, di vedere le transazioni, ecc…).
+
+2)	Il secondo metodo, che è quello che consigliamo se non si dispone di un PC abbastanza potente, è quello di configurare quorum tramite la versione presente nel seguente link: https://docs.goquorum.consensys.net/en/stable/HowTo/GetStarted/Wizard/GettingStarted/
+Seguire le istruzioni che si trovano nella pagina oppure procedere con i seguenti passi:
+
+     a)	Aprire il terminale e lanciare il comando “npm install -g quorum-wizard”.
+
+     b)	Lanciare il comando “quorum-wizard”.
+
+     c)	Scegliere la configurazione che si preferisce. Nel nostro sistema le scelte che sono state effettuate sono state le seguenti:
+     ![](github%20pictures%20for%20README/1.PNG)
+     ![](github%20pictures%20for%20README/2.PNG)
+     
+     Qui dobbiamo scegliere quale algoritmo del consenso adottare (noi abbiamo scelto “istanbul”):
+     ![](github%20pictures%20for%20README/2.PNG)
+     
+     A questo punto il sistema ci chiederà quanti nodi vogliamo installare. Chiaramente, maggiore è il numero di nodi che contemporaneamente dovranno essere mandati in esecuzione e maggiori saranno le risorse computazionali che verranno richieste alla macchina. 
+     Nota: noi abbiamo scelto 3 nodi.
+     ![](github%20pictures%20for%20README/3.PNG)
+     
+     Qui viene scelta la versione di Quorum:
+     ![](github%20pictures%20for%20README/4.PNG)
+     
+     Qui viene scelta la versione di Tessera (piattaforma per la gestione della privacy):
+     ![](github%20pictures%20for%20README/5.PNG)
+     ![](github%20pictures%20for%20README/6.PNG)
+     ![](github%20pictures%20for%20README/7.PNG)
+     
+     Se tutto è andato a buon fine, dovremmo avere questa situazione:
+     ![](github%20pictures%20for%20README/8.PNG)
+     
+     Quindi è stata creata la cartella “network” e all’interno è stata creata la cartella chiamata “3-nodes-istanbul-tessera-bash” (nome che abbiamo dato noi in uno degli step di configurazione) che contiene tutti i file (tra cui “docker-compose.yml”).
+     
+     Fatto questo ci spostiamo nella cartella “3-nodes-istanbul-tessera-bash”:
+     ![](github%20pictures%20for%20README/9.PNG)
+     
+     Poi lanciamo il comando “start.cmd”:
+     ![](github%20pictures%20for%20README/10.PNG)
+     
+     Fatto questo, la situazione che avremo nell’applicazione Docker sarà la seguente:
+     ![](github%20pictures%20for%20README/11.PNG)
+     Se i container sono verdi vuol dire che i nodi sono accesi; se sono grigi, invece, vuol dire che sono stoppati.
+
+
+
+
+
+
 
 ## Esecuzione del sistema
