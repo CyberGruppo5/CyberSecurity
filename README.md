@@ -65,7 +65,6 @@ Requisiti minimi consigliati:
 Per verificare che tutto è andato a buon fine eseguire i seguenti passaggi: aprire il terminale, spostarsi nella cartella che ospita i 7 nodi appena installati, eseguire l’istruzione “docker ps -a” per vedere tutti i container che ci sono (sia quelli attivi e sia quelli stoppati). Se tutto è andato nel verso giusto dovrebbero apparire 7 container per i nodi, 7 transaction manager ed 1 container chiamato “cakeshop” (che è un’interfaccia alla blockchain che ci dà la possibilità di visualizzare lo stato della blockchain e di vedere lo stato del proprio nodo, di vedere le transazioni, ecc…).
 
 2)	Il secondo metodo, che è quello che consigliamo se non si dispone di un PC abbastanza potente, è quello di configurare quorum tramite la versione presente nel seguente link: https://docs.goquorum.consensys.net/en/stable/HowTo/GetStarted/Wizard/GettingStarted/
-
 Seguire le istruzioni che si trovano nella pagina oppure procedere con i seguenti passi:
 
      a)	Aprire il terminale e lanciare il comando “npm install -g quorum-wizard”.
