@@ -156,4 +156,13 @@ La schermata che ci si presenterà davanti sarà la seguente:
 3)	Tornare nella cartella “CyberSecurity” e mandare in esecuzione il file .cmd denominato “MENU.cmd”.
 La schermata che ci si presenterà davanti sarà la seguente:
 
-![](github%20pictures%20for%20README/16.png)
+    ![](github%20pictures%20for%20README/16.png)
+
+
+    Descriviamo queste 6 funzionalità:
+    a)	l’opzione numero 1 ci consente di calcolare l’hash dell’immagine e delle misure che andremo poi a scrivere sulla blockchain;
+    b)	l’opzione numero 2 ci consente di andare a scrivere l’hash dell’immagine e l’hash delle misure che ci siamo calcolati con l’opzione numero 1;
+    c)	 l’opzione numero 3 ci consente di andare ad effettuare un’operazione di lettura sulla blockchain;
+    d)	l’opzione numero 4 ci consente di andare a controllare se un’immagine (tramite il suo hash) è già stata registrata sulla blockchain;
+    e)	l’opzione numero 5 ci consente di andare a controllare se una misura (tramite il suo hash) è già stata registrata sulla blockchain;
+    f)	l’opzione numero 6 ci consente di visualizzare tutti i container che ci sono su Docker (sia quelli attivi e sia quelli stoppati).
