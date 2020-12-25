@@ -73,6 +73,7 @@ Seguire le istruzioni che si trovano nella pagina oppure procedere con i seguent
      b)	Lanciare il comando “quorum-wizard”.
 
      c)	Scegliere la configurazione che si preferisce. Nel nostro sistema le scelte che sono state effettuate sono state le seguenti:
+     
      ![](github%20pictures%20for%20README/1.PNG)
      ![](github%20pictures%20for%20README/2.PNG)
      
