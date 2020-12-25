@@ -83,9 +83,11 @@ Seguire le istruzioni che si trovano nella pagina oppure procedere con i seguent
      ![](github%20pictures%20for%20README/4.PNG)
      
      
+     
      Qui viene scelta la versione di Quorum:
      
      ![](github%20pictures%20for%20README/5.PNG)
+     
      
      
      Qui viene scelta la versione di Tessera (piattaforma per la gestione della privacy):
@@ -98,6 +100,7 @@ Seguire le istruzioni che si trovano nella pagina oppure procedere con i seguent
      
      Quindi è stata creata la cartella “network” e all’interno è stata creata la cartella chiamata “3-nodes-istanbul-tessera-bash” (nome che abbiamo dato noi in uno degli step di configurazione) che contiene tutti i file (tra cui “docker-compose.yml”).
      
+     
      Fatto questo ci spostiamo nella cartella “3-nodes-istanbul-tessera-bash”:
      
      ![](github%20pictures%20for%20README/10.PNG)
@@ -106,6 +109,7 @@ Seguire le istruzioni che si trovano nella pagina oppure procedere con i seguent
      Poi lanciamo il comando “start.cmd”:
      
      ![](github%20pictures%20for%20README/11.PNG)
+     
      
      Fatto questo, la situazione che avremo nell’applicazione Docker sarà la seguente:
      ![](github%20pictures%20for%20README/12.PNG)
