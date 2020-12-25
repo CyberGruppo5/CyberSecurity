@@ -56,9 +56,7 @@ Il compilatore ci è servito, appunto, per compilare lo smart contract e generar
 In questa fase mostreremo quali sono gli step necessari per configurare Quorum sulla nostra macchina.
 In questa guida presenteremo 2 metodi per configurare Quorum sulla nostra macchina:
 1)	Il primo metodo, che è quello che consigliamo se si dispone di un PC abbastanza potente, è quello di configurare la release ufficiale di Quorum direttamente dal github di ConsenSys (cioè quello che originariamente apparteneva a JPMorgan Chase). Per far questo, ci si dovrà recare nella sezione github relativa alla blockchain Quorum sviluppata da JPMorgan Chase (https://github.com/ConsenSys/quorum-examples) e si dovranno le istruzioni per la configurazione di Qurum con Docker (che sul README.md della pagina vengono riportate sotto la voce di “Running with Docker”).
-
 Il vantaggio di questa versione è che comprende tantissime funzionalità!
-
 Lo svantaggio, ovviamente, lo riscontriamo computazionalmente. Infatti, per mandare in esecuzione i 7 nodi (previsti da questa versione di Quorum) con Docker in maniera fluida ed utilizzabile, serve una potenza di calcolo che non tutti i PC privati hanno.
 
     Requisiti minimi consigliati: 
