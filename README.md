@@ -144,18 +144,15 @@ ATTENZIONE: se il comando “loadScript” ritorna “false” vuol dire che qua
     docker cp .\CyberSecurity\SmartContract.js node1:/SmartContract.js                      
     b)	Fatto ciò, lanciare il seguente comando: docker-compose exec node1 /bin/sh -c "geth --exec 'loadScript(\"SmartContract.js\")' attach qdata/dd/geth.ipc"          
     A questo punto il contratto è stato caricato e in output ci ritorna il TransactionHash (che sarebbe una stringa esadecimale che rappresenta l’hash della transazione) che ci copieremo perché ci servirà a breve.                
-    c)	Ora, dato che abbiamo il TransactionHash ma abbiamo bisogno dell’indirizzo del contratto, dobbiamo entrare nel nodo 1 e lanciare il comando “eth.getTransactionReceipt”. Per far questo digitiamo il seguente comando: 
-                    
-    docker-compose exec node1 /bin/sh -c "geth attach qdata/dd/geth.ipc"
-                    
-    Una volta entrati nel nodo 1, lanciamo il comando “eth.getTransactionReceipt” dandogli in input il TransactionHash nel seguente modo: 
-                    
-    eth.getTransactionReceipt("<TransactionHash>")
-                    
+    c)	Ora, dato che abbiamo il TransactionHash ma abbiamo bisogno dell’indirizzo del contratto, dobbiamo entrare nel nodo 1 e lanciare il comando “eth.getTransactionReceipt”. Per far questo digitiamo il seguente comando:                
+    docker-compose exec node1 /bin/sh -c "geth attach qdata/dd/geth.ipc"            
+    Una volta entrati nel nodo 1, lanciamo il comando “eth.getTransactionReceipt” dandogli in input il TransactionHash nel seguente modo:             
+    eth.getTransactionReceipt("<TransactionHash>")          
     Nell’output che ci ritorna quest’ultimo comando troveremo l’indirizzo del contratto che ci andremo a copiare per poi passare allo step 3 della guida.
 
     Nota: com’è possibile vedere, per la risoluzione del problema di caricamento del contratto abbiamo preso come esempio il nodo 1. Possiamo facilmente farlo con gli altri nodi lanciando i comandi in maniera speculare andando a sostituire il numero di un altro nodo dove vediamo “1”.
 
 3)	Tornare nella cartella “CyberSecurity” e mandare in esecuzione il file .cmd denominato “MENU.cmd”.
 La schermata che ci si presenterà davanti sarà la seguente:
+
 ![](github%20pictures%20for%20README/16.png)
