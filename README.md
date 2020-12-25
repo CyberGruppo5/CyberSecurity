@@ -135,6 +135,7 @@ La schermata che ci si presenterà davanti sarà la seguente:
     ![](github%20pictures%20for%20README/14.png)
 
     A questo punto andremo ad eseguire il comando “loadScript(“SmartContract.js”)” che ci permette di mandare in esecuzione lo script “SmartContract.js”, all’interno della Geth JavaScript console, necessario per caricare lo smart contract sulla blockchain. La schermata che ci si presenterà davanti sarà la seguente:
+    
     ![](github%20pictures%20for%20README/15.png)
 
     Come vediamo, il contratto è stato caricato e ci è stato restituito il TransactionHash e l’address del contratto. Per concludere quest’operazione, ci copiamo l’indirizzo del contratto che ci servirà per andare ad effettuare le operazioni di scrittura e/o lettura sulla blockchain.
