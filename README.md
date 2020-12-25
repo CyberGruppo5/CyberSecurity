@@ -150,7 +150,7 @@ ATTENZIONE: se il comando “loadScript” ritorna “false” vuol dire che qua
     eth.getTransactionReceipt("<TransactionHash>")          
     Nell’output che ci ritorna quest’ultimo comando troveremo l’indirizzo del contratto che ci andremo a copiare per poi passare allo step 3 della guida.
 
-    Nota: com’è possibile vedere, per la risoluzione del problema di caricamento del contratto abbiamo preso come esempio il nodo 1. Possiamo facilmente farlo con gli altri nodi lanciando i comandi in maniera speculare andando a sostituire il numero di un altro nodo dove vediamo “1”.
+Nota: com’è possibile vedere, per la risoluzione del problema di caricamento del contratto abbiamo preso come esempio il nodo 1. Possiamo facilmente farlo con gli altri nodi lanciando i comandi in maniera speculare andando a sostituire il numero di un altro nodo dove vediamo “1”.
 
 3)	Tornare nella cartella “CyberSecurity” e mandare in esecuzione il file .cmd denominato “MENU.cmd”.
 La schermata che ci si presenterà davanti sarà la seguente:
