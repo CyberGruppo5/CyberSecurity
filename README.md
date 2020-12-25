@@ -32,7 +32,6 @@ Consiglio: nel momento in cui apparirà la seguente schermata, consigliamo di sp
 ![](github%20pictures%20for%20README/0.png)
 
 Una volta completata l'installazione, possiamo verificare se Node.js è stato correttamente installato aprendo una nuova finestra del terminale e lanciando il comando “node -v”. Il risultato che si otterrà, se tutto è andato a buon fine, sarà il seguente:
-
 ![](github%20pictures%20for%20README/0b.png)
 
 ### Installazione Qurum
