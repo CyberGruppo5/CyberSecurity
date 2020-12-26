@@ -167,6 +167,8 @@ La schermata che ci si presenterà davanti sarà la seguente:
     e)	l’opzione numero 5 ci consente di andare a controllare se una misura (tramite il suo hash) è già stata registrata sulla blockchain;
     
     f)	l’opzione numero 6 ci consente di visualizzare tutti i container che ci sono su Docker (sia quelli attivi e sia quelli stoppati).
+    
+    <br />
 
 
     Una volta selezionata una delle 6 opzioni, l’utente verrà guidato al fine di eseguire correttamente la funzionalità scelta.
