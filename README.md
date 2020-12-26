@@ -131,7 +131,7 @@ Gli step da seguire sono:
 2)	Una volta che tutti i nodi sono accesi, entrare nella cartella di riferimento (che nel nostro caso si trova nel percorso “C:\Users\Luca\network\3-nodes-istanbul-tessera-bash”) accedere alla cartella che si è generata dopo aver lanciato il comando “git clone” (che si chiamerà CyberSecurity) ed eseguire il file .cmd denominato “GETH.cmd” (“GET7.cmd” per blockchain a 7 nodi).
 La schermata che ci si presenterà davanti sarà la seguente:
 
-![](github%20pictures%20for%20README/13.png)
+    ![](github%20pictures%20for%20README/13.png)
 
     A questo punto dobbiamo scegliere con quale nodo andare a fare il deploy dello smart contract sulla blockchain. 
     Attenzione: solo il nodo con il quale andremo a caricare lo smart contract potrà andare a scrivere sulla blockchain. Questa funzionalità che ci permette di fare questo è stata implementata proprio all’interno dello smart contract.
