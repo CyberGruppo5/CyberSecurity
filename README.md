@@ -36,22 +36,6 @@ Una volta completata l'installazione, possiamo verificare se Node.js è stato co
 ![](github%20pictures%20for%20README/0b.png)
 
 
-Per installare i pacchetti che saranno necessari per la configurazione del nostro sistema, apriamo il terminale e lanciamo i seguenti comandi:
--	npm install -g web3
--	npm install -g readline
--	npm install -g readline-sync
--	npm install -g crypto
--	npm install -g image-hash
--	npm install -g solc@0.5.0 
-
-
-Nota: inserendo “-g” in ogni istruzione abbiamo acconsentito l’installazione dei pacchetti a livello globale. Nel momento in cui vogliamo installarli localmente (quindi all’interno della nostra cartella che ospiterà l’installazione di Quorum) dobbiamo spostarci dentro la cartella e, prima di lanciare l’installazione di tutti i pacchetti senza “-g”, dobbiamo eseguire il comando “npm init”.
-
-
-Nota 2: con il comando “npm install -g solc@0.5.0” andiamo ad installare il compilatore Solidity. Anche se la documentazione di Node.js consiglia di installare l’ultima release, noi abbiamo scelto di installare la versione 0.5.0 che è la più richiesta dalla community online.
-
-Il compilatore ci è servito, appunto, per compilare lo smart contract e generare l’abi e il bytecode. Per farlo abbiamo aperto il terminale, ci siamo spostati nella cartella dov’è presente il nostro smart contract (denominato “MySmartContract.sol”) ed eseguito il comando “solcjs --bin --abi MySmartContract.sol”.
-
 
 ### Installazione Qurum
 In questa fase mostreremo quali sono gli step necessari per configurare Quorum sulla nostra macchina.
@@ -126,42 +110,46 @@ Come operazione preliminare, recarsi nella cartella di riferimento che ospita tu
 
 git clone https://github.com/CyberGruppo5/CyberSecurity.git
 
-Fatto questo, seguiamo passo passo i prossimi step:
+
+A questo punto è necessario installare i pacchetti Node.js che saranno necessari per l’esecuzione del nostro sistema; per farlo apriamo il terminale, spostiamoci nella cartella CyberSecurity che si è generata dopo aver lanciato il comando “git clone” e mandiamo in esecuzione l’istruzione “npm init” mantenendo le configurazioni di default che ci verranno chieste. Fatto questo, lanciare uno per volta i seguenti comandi che ci permetteranno di installare i pacchetti necessari per l’esecuzione del nostro sistema:
+-	npm install web3
+-	npm install readline
+-	npm install readline-sync
+-	npm install crypto
+-	npm install image-hash
+
+
+Ora abbiamo terminato la parte di installazione e configurazione, e siamo pronti per l’esecuzione!
+
+
+
+
+Successivamente verrà mostrato l’iter da seguire per mandare in esecuzione il sistema. Si noti che nell’esempio che mostreremo abbiamo preso in considerazione il caso di una blockchain a 3 nodi; nel caso in cui si dispone della blockchain a 7 nodi, verranno specificati i file complementari da eseguire.
+Gli step da seguire sono:
+
 1)	Per prima cosa mandare in esecuzione Docker e accendere tutti i nodi. 
-2)	Fatto questo, entrare nella cartella di riferimento (che in quest’esempio si trova nel percorso “C:\Users\Luca\network\3-nodes-istanbul-tessera-bash”) accedere alla cartella creata dopo aver lanciato il comando “git clone” (che si chiamerà CyberSecurity) ed eseguire il file .cmd denominato “GETH.cmd”.
+2)	Una volta che tutti i nodi sono accesi, entrare nella cartella di riferimento (che nel nostro caso si trova nel percorso “C:\Users\Luca\network\3-nodes-istanbul-tessera-bash”) accedere alla cartella che si è generata dopo aver lanciato il comando “git clone” (che si chiamerà CyberSecurity) ed eseguire il file .cmd denominato “GETH.cmd” (“GET7.cmd” per blockchain a 7 nodi).
 La schermata che ci si presenterà davanti sarà la seguente:
-![](github%20pictures%20for%20README/13.png)
+
+    ![](github%20pictures%20for%20README/13.png)
 
     A questo punto dobbiamo scegliere con quale nodo andare a fare il deploy dello smart contract sulla blockchain. 
     Attenzione: solo il nodo con il quale andremo a caricare lo smart contract potrà andare a scrivere sulla blockchain. Questa funzionalità che ci permette di fare questo è stata implementata proprio all’interno dello smart contract.
 
-    Una volta scelto il nodo (ad esempio scegliamo il nodo 1) la schermata che ci si presenterà davanti sarà la seguente:
+    Una volta scelto il nodo (nel caso preso in esempio abbiamo scelto il nodo 1) la schermata che ci si presenterà davanti sarà la seguente:
     ![](github%20pictures%20for%20README/14.png)
-
+    
     A questo punto andremo ad eseguire il comando “loadScript(“SmartContract.js”)” che ci permette di mandare in esecuzione lo script “SmartContract.js”, all’interno della Geth JavaScript console, necessario per caricare lo smart contract sulla blockchain. La schermata che ci si presenterà davanti sarà la seguente:
     
     ![](github%20pictures%20for%20README/15.png)
 
-    Come vediamo, il contratto è stato caricato e ci è stato restituito il TransactionHash e l’address del contratto. Per concludere quest’operazione, ci copiamo l’indirizzo del contratto che ci servirà per andare ad effettuare le operazioni di scrittura e/o lettura sulla blockchain.
+    Come vediamo, il contratto è stato caricato e ci è stato restituito il TransactionHash e l’address del contratto. Per concludere questo step, ci copiamo l’indirizzo del contratto che ci servirà per andare ad effettuare le operazioni di scrittura e/o lettura sulla blockchain.
 
-    ATTENZIONE: se il comando “loadScript” ritorna “false” vuol dire che qualcosa non è andato a buon fine. Questo problema può essere aggirato eseguendo il deploy del contratto con le seguenti operazioni:              
-        
-    a)	Aprire il terminale, recarsi nella cartella di riferimento (che in quest’esempio si trova nel percorso “C:\Users\Luca\network\3-nodes-istanbul-tessera-bash”) e lanciare il seguente comando:
-    docker cp .\CyberSecurity\SmartContract.js node1:/SmartContract.js                      
-        
-    b)	Fatto ciò, lanciare il seguente comando: docker-compose exec node1 /bin/sh -c "geth --exec 'loadScript(\"SmartContract.js\")' attach qdata/dd/geth.ipc"          
-    A questo punto il contratto è stato caricato e in output ci ritorna il TransactionHash (che sarebbe una stringa esadecimale che rappresenta l’hash della transazione) che ci copieremo perché ci servirà a breve.                
-        
-    c)	Ora, dato che abbiamo il TransactionHash ma abbiamo bisogno dell’indirizzo del contratto, dobbiamo entrare nel nodo 1 e lanciare il comando “eth.getTransactionReceipt”. Per far questo digitiamo il seguente comando:                
-    docker-compose exec node1 /bin/sh -c "geth attach qdata/dd/geth.ipc"            
-    Una volta entrati nel nodo 1, lanciamo il comando “eth.getTransactionReceipt” dandogli in input il TransactionHash nel seguente modo:             
-    eth.getTransactionReceipt(" &lt; TransactionHash &gt; ")          
-    Nell’output che ci ritorna quest’ultimo comando troveremo l’indirizzo del contratto che ci andremo a copiare per poi passare allo step 3 della guida.
+    
 
-    Nota: com’è possibile vedere, per la risoluzione del problema di caricamento del contratto abbiamo preso come esempio il nodo 1. Possiamo facilmente farlo con gli altri nodi lanciando i comandi in maniera speculare andando a sostituire il numero di un altro nodo dove vediamo “1”.
-
-3)	Tornare nella cartella “CyberSecurity” e mandare in esecuzione il file .cmd denominato “MENU.cmd”.
+3)	Tornare nella cartella “CyberSecurity” e mandare in esecuzione il file .cmd denominato “MENU.cmd” (“MENU7.cmd” per blockchain a 7 nodi).
 La schermata che ci si presenterà davanti sarà la seguente:
+
 
     ![](github%20pictures%20for%20README/16.png)
 
@@ -179,3 +167,52 @@ La schermata che ci si presenterà davanti sarà la seguente:
     e)	l’opzione numero 5 ci consente di andare a controllare se una misura (tramite il suo hash) è già stata registrata sulla blockchain;
     
     f)	l’opzione numero 6 ci consente di visualizzare tutti i container che ci sono su Docker (sia quelli attivi e sia quelli stoppati).
+    
+    <br />
+
+
+    Una volta selezionata una delle 6 opzioni, l’utente verrà guidato al fine di eseguire correttamente la funzionalità scelta.
+
+
+    Di seguito verrà riportata una simulazione di esecuzione:
+
+    **OPZIONE 1**: 
+    Selezionando l’opzione 1, dando in input il path dell’immagine (che si trova nel percorso .\CyberSecurity\immagini) e il path della misura (che si trova nel percorso .\CyberSecurity\misure), ci ritornerà in output il percorso dove sono stati generati i 2 file temporanei che contengono l’hash dell’immagine e l’hash delle misure relative a quell’immagine.
+
+    Possiamo vederne un esempio di esecuzione nella seguente figura:
+    ![](github%20pictures%20for%20README/17.PNG)
+    <br />
+
+    **OPZIONE 2**:
+    Selezionando l’opzione 2, dando in input il nodo con il quale vogliamo andare a scrivere sulla blockchain (che, come abbiamo precisato in precedenza, dovrà essere lo stesso con il quale abbiamo effettuato il deploy dello smart contract sulla blockchain) e l’indirizzo dello smart contract (che abbiamo ottenuto nello step 2), otterremo la scrittura sulla blockchain delle seguenti informazioni: ID, hash dell’immagine, hash delle misure, timestamp e account del nodo con il quale abbiamo effettuato la transazione. Si noti inoltre che, come effetto di quest’operazione, vengono eliminati i 2 file temporanei che contengono gli hash dell’immagine e delle misure; questo ci consente di evitare attacchi che possono andare a violare le nostre policy di sicurezza.
+
+    Possiamo vederne un esempio di esecuzione nella seguente figura:
+    ![](github%20pictures%20for%20README/18.PNG)
+    <br />
+
+    **OPZIONE 3**:
+    Selezionando l’opzione 3, dando in input il nodo con il quale vogliamo andare ad effettuare l’operazione di lettura sulla blockchain, l’indirizzo dello smart contract (che abbiamo ottenuto nello step 2) e l’ID della transazione che vogliamo andare a leggere, otterremo in output tutte le informazioni che sono state scritte sulla blockchain relativamente all’ID selezionato.
+
+    Possiamo vederne un esempio di esecuzione nella seguente figura:
+    ![](github%20pictures%20for%20README/19.PNG)
+    <br />
+
+    **OPZIONE 4**:
+    Selezionando l’opzione 4, dando in input il nodo con il quale vogliamo andare ad effettuare l’operazione di lettura sulla blockchain, l’indirizzo dello smart contract (che abbiamo ottenuto nello step 2) e l’hash dell’immagine che vogliamo andare a cercare, otterremo in output l’ID relativo all’hash dell’immagine inserito in input. Grazie a questa funzionalità possiamo partire da un’immagine e verificare se è stata già scritta sulla blockchain e, nel caso è stata già scritta, andare a visualizzare le relative informazioni recuperando l’ID e ritornando ad effettuare l’opzione 3 del menù.
+
+    Possiamo vederne un esempio di esecuzione nella seguente figura:
+    ![](github%20pictures%20for%20README/20.PNG)
+    <br />
+
+    **OPZIONE 5**:
+    Selezionando l’opzione 5, dando in input il nodo con il quale vogliamo andare ad effettuare l’operazione di lettura sulla blockchain, l’indirizzo dello smart contract (che abbiamo ottenuto nello step 2) e l’hash della misura che vogliamo andare a cercare, otterremo in output l’ID relativo all’hash della misura inserito in input. Grazie a questa funzionalità possiamo partire da una misura e verificare se è stata già scritta sulla blockchain e, nel caso è stata già scritta, andare a visualizzare le relative informazioni recuperando l’ID e ritornando ad effettuare l’opzione 3 del menù.
+
+    Possiamo vederne un esempio di esecuzione nella seguente figura:
+    ![](github%20pictures%20for%20README/21.PNG)
+    <br />
+
+    **OPZIONE 6**:
+    Selezionando l’opzione 6 possiamo visualizzare tutti i container che ci sono su Docker (sia quelli attivi e sia quelli stoppati).
+
+    Possiamo vederne un esempio di esecuzione nella seguente figura:
+    ![](github%20pictures%20for%20README/22.PNG)
