@@ -181,6 +181,7 @@ La schermata che ci si presenterà davanti sarà la seguente:
 
     Possiamo vederne un esempio di esecuzione nella seguente figura:
     ![](github%20pictures%20for%20README/17.PNG)
+    
     <br />
 
     **OPZIONE 2**:
@@ -188,6 +189,7 @@ La schermata che ci si presenterà davanti sarà la seguente:
 
     Possiamo vederne un esempio di esecuzione nella seguente figura:
     ![](github%20pictures%20for%20README/18.PNG)
+    
     <br />
 
     **OPZIONE 3**:
@@ -195,6 +197,7 @@ La schermata che ci si presenterà davanti sarà la seguente:
 
     Possiamo vederne un esempio di esecuzione nella seguente figura:
     ![](github%20pictures%20for%20README/19.PNG)
+    
     <br />
 
     **OPZIONE 4**:
@@ -202,6 +205,7 @@ La schermata che ci si presenterà davanti sarà la seguente:
 
     Possiamo vederne un esempio di esecuzione nella seguente figura:
     ![](github%20pictures%20for%20README/20.PNG)
+    
     <br />
 
     **OPZIONE 5**:
@@ -209,6 +213,7 @@ La schermata che ci si presenterà davanti sarà la seguente:
 
     Possiamo vederne un esempio di esecuzione nella seguente figura:
     ![](github%20pictures%20for%20README/21.PNG)
+    
     <br />
 
     **OPZIONE 6**:
