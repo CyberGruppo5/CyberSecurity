@@ -50,6 +50,8 @@ Lo svantaggio, ovviamente, lo riscontriamo computazionalmente. Infatti, per mand
     - SSD.
 
     Per verificare che tutto è andato a buon fine eseguire i seguenti passaggi: aprire il terminale, spostarsi nella cartella che ospita i 7 nodi appena installati, eseguire l’istruzione “docker ps -a” per vedere tutti i container che ci sono (sia quelli attivi e sia quelli stoppati). Se tutto è andato nel verso giusto dovrebbero apparire 7 container per i nodi, 7 transaction manager ed 1 container chiamato “cakeshop” (che è un’interfaccia alla blockchain che ci dà la possibilità di visualizzare lo stato della blockchain e di vedere lo stato del proprio nodo, di vedere le transazioni, ecc…).
+    
+    A questo punto, se tutto è andato a buon fine, nella cartella di destinazione è stata creata una cartella chiamata “quorum-examples”.
 
 2)	Il secondo metodo, che è quello che consigliamo se non si dispone di un PC abbastanza potente, è quello di configurare quorum tramite la versione presente nel seguente link: https://docs.goquorum.consensys.net/en/stable/HowTo/GetStarted/Wizard/GettingStarted/.
 Seguire le istruzioni che si trovano nella pagina oppure procedere con i seguenti passi:
@@ -110,6 +112,7 @@ Come operazione preliminare, recarsi nella cartella di riferimento che ospita tu
 ```
 git clone https://github.com/CyberGruppo5/CyberSecurity.git
 ```
+Nota: se abbiamo installato la blockchain a 7 nodi (quindi seguendo il metodo 1) la cartella nella quale andare ad effettuare il comando “git clone” sarà “.\quorum-examples\examples\7nodes”. Se abbiamo installato la blockchain a 3 nodi (quindi seguendo il metodo 2) la cartella nella quale andare ad effettuare il comando “git clone” sarà “.\network\3-nodes-istanbul-tessera-bash”.
 
 A questo punto è necessario installare i pacchetti Node.js che saranno necessari per l’esecuzione del nostro sistema; per farlo apriamo il terminale, spostiamoci nella cartella CyberSecurity che si è generata dopo aver lanciato il comando “git clone” e mandiamo in esecuzione l’istruzione “npm init” mantenendo le configurazioni di default che ci verranno chieste. Fatto questo, lanciare uno per volta i seguenti comandi che ci permetteranno di installare i pacchetti necessari per l’esecuzione del nostro sistema:
 -	npm install web3
@@ -128,7 +131,8 @@ Successivamente verrà mostrato l’iter da seguire per mandare in esecuzione il
 Gli step da seguire sono:
 
 1)	Per prima cosa mandare in esecuzione Docker e accendere tutti i nodi. 
-2)	Una volta che tutti i nodi sono accesi, entrare nella cartella di riferimento (che nel nostro caso si trova nel percorso “C:\Users\Luca\network\3-nodes-istanbul-tessera-bash”) accedere alla cartella che si è generata dopo aver lanciato il comando “git clone” (che si chiamerà CyberSecurity) ed eseguire il file .cmd denominato “GETH.cmd” (“GET7.cmd” per blockchain a 7 nodi).
+2)	Una volta che tutti i nodi sono accesi, entrare nella cartella di riferimento (che nel nostro caso si trova nel percorso “C:\Users\Luca\network\3-nodes-istanbul-tessera-bash” mentre nel caso dei 7 nodi si trova nella cartella “7nodes”) accedere alla cartella che si è generata dopo aver lanciato il comando “git clone” (che si chiamerà CyberSecurity) ed eseguire il file .cmd denominato “GETH.cmd” (“GET7.cmd” per blockchain a 7 nodi).
+
 La schermata che ci si presenterà davanti sarà la seguente:
 
     ![](github%20pictures%20for%20README/13.png)
