@@ -138,6 +138,7 @@ La schermata che ci si presenterà davanti sarà la seguente:
 
     Una volta scelto il nodo (nel caso preso in esempio abbiamo scelto il nodo 1) la schermata che ci si presenterà davanti sarà la seguente:
     ![](github%20pictures%20for%20README/14.png)
+    
     A questo punto andremo ad eseguire il comando “loadScript(“SmartContract.js”)” che ci permette di mandare in esecuzione lo script “SmartContract.js”, all’interno della Geth JavaScript console, necessario per caricare lo smart contract sulla blockchain. La schermata che ci si presenterà davanti sarà la seguente:
     
     ![](github%20pictures%20for%20README/15.png)
