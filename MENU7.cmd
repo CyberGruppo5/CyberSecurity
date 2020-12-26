@@ -29,7 +29,7 @@ IF %M%==7 GOTO EOF
 CLS
 echo NOW WE CALCULATE THE HASHES OF IMAGE AND MEASURES!
 echo.
-node HashFunction7.js
+node HashFunction.js
 echo.
 pause
 GOTO MENU

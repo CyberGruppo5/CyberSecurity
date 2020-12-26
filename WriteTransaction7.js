@@ -56,29 +56,29 @@ switch (response) {
   case '4':
   {
     // NODO 4
-	rpcURL = 
-	account = 
+	rpcURL = "http://localhost:22003";
+	account = "0x9186eb3d20cbd1f5f992a950d808c4495153abd5";
     break;
   }
   case '5':
   {
     // NODO 5
-	rpcURL = 
-	account = 
+	rpcURL = "http://localhost:22004";
+	account = "0x0638e1574728b6d862dd5d3a3e0942c3be47d996";
     break;
   }
   case '6':
   {
     // NODO 6
-	rpcURL = 
-	account = 
+	rpcURL = "http://localhost:22005";
+	account = "0xae9bc6cd5145e67fbd1887a5145271fd182f0ee7";
     break;
   }
   case '7':
   {
     // NODO 7
-	rpcURL = 
-	account = 
+	rpcURL = "http://localhost:22006";
+	account = "0xcc71c7546429a13796cf1bf9228bff213e7ae9cc";
     break;
   }
 }

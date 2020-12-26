@@ -3,6 +3,7 @@ echo WELCOME, NOW WE ARE STARTING THE BLOCKCHAIN!
 ECHO.
 cd ..
 docker-compose up -d
+cd CyberSecurity
 
 :MENU
 ECHO.
@@ -22,6 +23,9 @@ IF %M%==3 GOTO nodo3
 IF %M%==4 GOTO EOF
 :nodo1
 ECHO.
+FOR /F "tokens=* USEBACKQ" %%g IN (`docker-compose ps -q node1`) DO set DOCKER_CONTAINER=%%g
+docker cp SmartContract.js %DOCKER_CONTAINER%:/SmartContract.js
+docker-compose exec node1 /bin/sh -c "geth --exec 'loadScript(\"SmartContract.js\")' attach qdata/dd/geth.ipc" > nul 2>&1
 docker-compose exec node1 /bin/sh -c "geth attach qdata/dd/geth.ipc"
 pause
 CLS
@@ -29,6 +33,9 @@ GOTO MENU
 
 :nodo2
 ECHO.
+FOR /F "tokens=* USEBACKQ" %%g IN (`docker-compose ps -q node2`) DO set DOCKER_CONTAINER=%%g
+docker cp SmartContract.js %DOCKER_CONTAINER%:/SmartContract.js
+docker-compose exec node2 /bin/sh -c "geth --exec 'loadScript(\"SmartContract.js\")' attach qdata/dd/geth.ipc" > nul 2>&1
 docker-compose exec node2 /bin/sh -c "geth attach qdata/dd/geth.ipc"
 pause
 CLS
@@ -36,6 +43,9 @@ GOTO MENU
 
 :nodo3
 ECHO.
+FOR /F "tokens=* USEBACKQ" %%g IN (`docker-compose ps -q node3`) DO set DOCKER_CONTAINER=%%g
+docker cp SmartContract.js %DOCKER_CONTAINER%:/SmartContract.js
+docker-compose exec node3 /bin/sh -c "geth --exec 'loadScript(\"SmartContract.js\")' attach qdata/dd/geth.ipc" > nul 2>&1
 docker-compose exec node3 /bin/sh -c "geth attach qdata/dd/geth.ipc"
 pause
 CLS
