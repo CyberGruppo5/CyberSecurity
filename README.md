@@ -178,34 +178,34 @@ OPZIONE 1:
 Selezionando l’opzione 1, dando in input il path dell’immagine (che si trova nel percorso .\CyberSecurity\immagini) e il path della misura (che si trova nel percorso .\CyberSecurity\misure), ci ritornerà in output il percorso dove sono stati generati i 2 file temporanei che contengono l’hash dell’immagine e l’hash delle misure relative a quell’immagine.
 
 Possiamo vederne un esempio di esecuzione nella seguente figura:
-![](github%20pictures%20for%20README/17.png)
+![](github%20pictures%20for%20README/17.PNG)
 
 OPZIONE 2:
 Selezionando l’opzione 2, dando in input il nodo con il quale vogliamo andare a scrivere sulla blockchain (che, come abbiamo precisato in precedenza, dovrà essere lo stesso con il quale abbiamo effettuato il deploy dello smart contract sulla blockchain) e l’indirizzo dello smart contract (che abbiamo ottenuto nello step 2), otterremo la scrittura sulla blockchain delle seguenti informazioni: ID, hash dell’immagine, hash delle misure, timestamp e account del nodo con il quale abbiamo effettuato la transazione. Si noti inoltre che, come effetto di quest’operazione, vengono eliminati i 2 file temporanei che contengono gli hash dell’immagine e delle misure; questo ci consente di evitare attacchi che possono andare a violare le nostre policy di sicurezza.
 
 Possiamo vederne un esempio di esecuzione nella seguente figura:
-![](github%20pictures%20for%20README/18.png)
+![](github%20pictures%20for%20README/18.PNG)
 
 OPZIONE 3:
 Selezionando l’opzione 3, dando in input il nodo con il quale vogliamo andare ad effettuare l’operazione di lettura sulla blockchain, l’indirizzo dello smart contract (che abbiamo ottenuto nello step 2) e l’ID della transazione che vogliamo andare a leggere, otterremo in output tutte le informazioni che sono state scritte sulla blockchain relativamente all’ID selezionato.
 
 Possiamo vederne un esempio di esecuzione nella seguente figura:
-![](github%20pictures%20for%20README/19.png)
+![](github%20pictures%20for%20README/19.PNG)
 
 OPZIONE 4:
 Selezionando l’opzione 4, dando in input il nodo con il quale vogliamo andare ad effettuare l’operazione di lettura sulla blockchain, l’indirizzo dello smart contract (che abbiamo ottenuto nello step 2) e l’hash dell’immagine che vogliamo andare a cercare, otterremo in output l’ID relativo all’hash dell’immagine inserito in input. Grazie a questa funzionalità possiamo partire da un’immagine e verificare se è stata già scritta sulla blockchain e, nel caso è stata già scritta, andare a visualizzare le relative informazioni recuperando l’ID e ritornando ad effettuare l’opzione 3 del menù.
 
 Possiamo vederne un esempio di esecuzione nella seguente figura:
-![](github%20pictures%20for%20README/20.png)
+![](github%20pictures%20for%20README/20.PNG)
 
 OPZIONE 5:
 Selezionando l’opzione 5, dando in input il nodo con il quale vogliamo andare ad effettuare l’operazione di lettura sulla blockchain, l’indirizzo dello smart contract (che abbiamo ottenuto nello step 2) e l’hash della misura che vogliamo andare a cercare, otterremo in output l’ID relativo all’hash della misura inserito in input. Grazie a questa funzionalità possiamo partire da una misura e verificare se è stata già scritta sulla blockchain e, nel caso è stata già scritta, andare a visualizzare le relative informazioni recuperando l’ID e ritornando ad effettuare l’opzione 3 del menù.
 
 Possiamo vederne un esempio di esecuzione nella seguente figura:
-![](github%20pictures%20for%20README/21.png)
+![](github%20pictures%20for%20README/21.PNG)
 
 OPZIONE 6:
 Selezionando l’opzione 6 possiamo visualizzare tutti i container che ci sono su Docker (sia quelli attivi e sia quelli stoppati).
 
 Possiamo vederne un esempio di esecuzione nella seguente figura:
-![](github%20pictures%20for%20README/22.png)
+![](github%20pictures%20for%20README/22.PNG)
