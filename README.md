@@ -107,9 +107,9 @@ Seguire le istruzioni che si trovano nella pagina oppure procedere con i seguent
 
 ## Esecuzione del sistema
 Come operazione preliminare, recarsi nella cartella di riferimento che ospita tutto il sistema appena installato e mandare in esecuzione il seguente comando:
-
+```
 git clone https://github.com/CyberGruppo5/CyberSecurity.git
-
+```
 
 A questo punto è necessario installare i pacchetti Node.js che saranno necessari per l’esecuzione del nostro sistema; per farlo apriamo il terminale, spostiamoci nella cartella CyberSecurity che si è generata dopo aver lanciato il comando “git clone” e mandiamo in esecuzione l’istruzione “npm init” mantenendo le configurazioni di default che ci verranno chieste. Fatto questo, lanciare uno per volta i seguenti comandi che ci permetteranno di installare i pacchetti necessari per l’esecuzione del nostro sistema:
 -	npm install web3
