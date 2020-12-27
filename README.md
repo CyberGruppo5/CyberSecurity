@@ -148,6 +148,8 @@ Gli step da seguire sono:
        ![](github%20pictures%20for%20README/15.png)
 
        Come vediamo, il contratto è stato caricato e ci è stato restituito il TransactionHash e l’address del contratto. Per concludere questo step, ci copiamo l’indirizzo del contratto che ci servirà per andare ad effettuare le operazioni di scrittura e/o lettura sulla blockchain.
+       
+       <br />
 
     
 
