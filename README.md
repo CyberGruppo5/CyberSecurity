@@ -133,21 +133,21 @@ Gli step da seguire sono:
 1)	Per prima cosa mandare in esecuzione Docker e accendere tutti i nodi. 
 2)	Una volta che tutti i nodi sono accesi, entrare nella cartella di riferimento (che nel nostro caso si trova nel percorso “C:\Users\Luca\network\3-nodes-istanbul-tessera-bash” mentre nel caso dei 7 nodi si trova nella cartella “7nodes”) accedere alla cartella che si è generata dopo aver lanciato il comando “git clone” (che si chiamerà CyberSecurity) ed eseguire il file .cmd denominato “GETH.cmd” (“GET7.cmd” per blockchain a 7 nodi).
 
-La schermata che ci si presenterà davanti sarà la seguente:
+       La schermata che ci si presenterà davanti sarà la seguente:
 
-    ![](github%20pictures%20for%20README/13.png)
+       ![](github%20pictures%20for%20README/13.png)
 
-    A questo punto dobbiamo scegliere con quale nodo andare a fare il deploy dello smart contract sulla blockchain. 
-    Attenzione: solo il nodo con il quale andremo a caricare lo smart contract potrà andare a scrivere sulla blockchain. Questa funzionalità che ci permette di fare questo è stata implementata proprio all’interno dello smart contract.
+       A questo punto dobbiamo scegliere con quale nodo andare a fare il deploy dello smart contract sulla blockchain. 
+       Attenzione: solo il nodo con il quale andremo a caricare lo smart contract potrà andare a scrivere sulla blockchain. Questa funzionalità che ci permette di fare questo è stata implementata proprio all’interno dello smart contract.
 
-    Una volta scelto il nodo (nel caso preso in esempio abbiamo scelto il nodo 1) la schermata che ci si presenterà davanti sarà la seguente:
-    ![](github%20pictures%20for%20README/14.png)
-    
-    A questo punto andremo ad eseguire il comando “loadScript(“SmartContract.js”)” che ci permette di mandare in esecuzione lo script “SmartContract.js”, all’interno della Geth JavaScript console, necessario per caricare lo smart contract sulla blockchain. La schermata che ci si presenterà davanti sarà la seguente:
-    
-    ![](github%20pictures%20for%20README/15.png)
+       Una volta scelto il nodo (nel caso preso in esempio abbiamo scelto il nodo 1) la schermata che ci si presenterà davanti sarà la seguente:
+       ![](github%20pictures%20for%20README/14.png)
 
-    Come vediamo, il contratto è stato caricato e ci è stato restituito il TransactionHash e l’address del contratto. Per concludere questo step, ci copiamo l’indirizzo del contratto che ci servirà per andare ad effettuare le operazioni di scrittura e/o lettura sulla blockchain.
+       A questo punto andremo ad eseguire il comando “loadScript(“SmartContract.js”)” che ci permette di mandare in esecuzione lo script “SmartContract.js”, all’interno della Geth JavaScript console, necessario per caricare lo smart contract sulla blockchain. La schermata che ci si presenterà davanti sarà la seguente:
+
+       ![](github%20pictures%20for%20README/15.png)
+
+       Come vediamo, il contratto è stato caricato e ci è stato restituito il TransactionHash e l’address del contratto. Per concludere questo step, ci copiamo l’indirizzo del contratto che ci servirà per andare ad effettuare le operazioni di scrittura e/o lettura sulla blockchain.
 
     
 
